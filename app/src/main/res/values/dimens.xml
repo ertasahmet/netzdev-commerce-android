@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="input_bottom_margin">10dp</dimen>
+
+</resources>

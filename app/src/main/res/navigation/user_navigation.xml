@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_navigation"
+    app:startDestination="@id/productListFragmentNav">
+
+    <fragment
+        android:id="@+id/productListFragmentNav"
+        android:name="com.netzdev.ecommerce.UI.Products.ProductList.ProductListFragment"
+        android:label="product_list_fragment"
+        tools:layout="@layout/product_list_fragment" >
+        <action
+            android:id="@+id/action_productListFragment_to_productAddFragment"
+            app:destination="@id/productAddFragmentNav" />
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragmentNav" />
+    </fragment>
+    <fragment
+        android:id="@+id/productAddFragmentNav"
+        android:name="com.netzdev.ecommerce.UI.Products.ProductAdd.ProductAddFragment"
+        android:label="product_add_fragment"
+        tools:layout="@layout/product_add_fragment" />
+    <fragment
+        android:id="@+id/productDetailFragmentNav"
+        android:name="com.netzdev.ecommerce.UI.Products.ProductDetail.ProductDetailFragment"
+        android:label="product_detail_fragment"
+        tools:layout="@layout/product_detail_fragment" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_productUpdateFragment"
+            app:destination="@id/productUpdateFragmentNav" />
+        <argument
+            android:name="product_Id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/productUpdateFragmentNav"
+        android:name="com.netzdev.ecommerce.UI.Products.ProductUpdate.ProductUpdateFragment"
+        android:label="product_update_fragment"
+        tools:layout="@layout/product_update_fragment" >
+        <argument
+            android:name="product"
+            app:argType="com.netzdev.ecommerce.Models.Product" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragmentNav"
+        android:name="com.netzdev.ecommerce.UI.User.Profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+</navigation>
